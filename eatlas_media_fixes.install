@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_uninstall().
+ */
+function eatlas_media_fixes_uninstall() {
+	media_variable_del('wysiwyg_default_view_mode');
+	media_variable_del('eatlas_maximum_image_width');
+	media_variable_del('eatlas_maximum_image_height');
+}
+
+?>

@@ -1,0 +1,19 @@
+; $Id$
+name = eAtlas Media module fixes
+description = Fix issues in media module, such as setting the image width x height.
+core = 7.x
+
+files[] = eatlas_media_fixes.module
+
+package = eAtlas
+
+configure = admin/config/eatlas/eatlas_media_fixes
+
+dependencies[] = eatlas_commons (>=1.4)
+dependencies[] = media
+
+; Attributes used by the update module.
+; There fields needs to be removed if the module is migrated to Drupal.org
+project status url = "http://drupal.eatlas.org.au/modules/eatlas"
+version = "7.x-1.0"
+project = "eatlas_media_fixes"

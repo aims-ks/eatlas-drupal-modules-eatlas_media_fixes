@@ -1,0 +1,33 @@
+<?php
+// Configuration for variables:
+//   media_variable_get('wysiwyg_default_view_mode');
+//   $view_modes = media_get_wysiwyg_allowed_view_modes($file);
+//   media_variable_set('wysiwyg_default_view_mode', 'media_original');
+
+//   media_variable_get('eatlas_maximum_image_width');
+//   media_variable_get('eatlas_maximum_image_height');
+
+
+/**
+ * Implements: hook_menu().
+ *
+ * Module configuration
+ *   https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_menu/7
+ */
+function eatlas_media_fixes_menu() {
+	$items = array();
+
+	// NOTE: admin/config/eatlas is defined in "eatlas_commons"
+	$items['admin/config/eatlas/eatlas_media_fixes'] = array(
+		'title' => 'Media module settings',
+		'description' => 'Settings for the module "eAtlas Media module fixes"',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('_eatlas_media_fixes_settings'),
+		'access arguments' => array('access administration pages'),
+		'file' => 'eatlas_media_fixes.admin.inc'
+	);
+
+	return $items;
+}
+
+?>
